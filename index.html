@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tết Nguyên Đán</title>
+
+<style>
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #fff8e8;
+
+    color: #5c160d;
+
+    line-height: 1.7;
+
+}
+
+header {
+
+    background: linear-gradient(135deg, #a80000, #ed2929);
+
+    color: #ffd86b;
+
+    text-align: center;
+
+    padding: 35px 15px;
+
+}
+
+header h1 {
+
+    font-size: 38px;
+
+}
+
+header p {
+
+    font-size: 18px;
+
+    margin-top: 8px;
+
+}
+
+nav {
+
+    background: #7e0000;
+
+    padding: 12px;
+
+    text-align: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 5px 10px;
+
+    display: inline-block;
+
+    font-weight: bold;
+
+}
+
+nav a:hover {
+
+    color: #ffd45c;
+
+}
+
+.hero {
+
+    text-align: center;
+
+    padding: 65px 20px;
+
+    color: white;
+
+    background:
+
+        linear-gradient(#72000099, #72000099),
+
+        url("https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1600&q=80")
+
+        center/cover;
+
+}
+
+.hero h2 {
+
+    font-size: 36px;
+
+    color: #ffdf75;
+
+}
+
+.hero p {
+
+    font-size: 19px;
+
+    margin: 15px auto;
+
+    max-width: 700px;
+
+}
+
+.hero a {
+
+    display: inline-block;
+
+    background: #ffd45c;
+
+    color: #800000;
+
+    padding: 10px 25px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+}
+
+section {
+
+    padding: 45px 7%;
+
+    scroll-margin-top: 65px;
+
+}
+
+section h2 {
+
+    color: #b00000;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    font-size: 28px;
+
+}
+
+.intro {
+
+    text-align: center;
+
+    max-width: 900px;
+
+    margin: auto;
+
+}
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 22px;
+
+}
+
+.card {
+
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px #8b451322;
+
+    transition: transform 0.3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.card img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+}
+
+.card-content {
+
+    padding: 18px;
+
+}
+
+.card h3 {
+
+    color: #b00000;
+
+    margin-bottom: 8px;
+
+}
+
+.highlight {
+
+    background: #ffedbd;
+
+}
+
+.message {
+
+    text-align: center;
+
+    background: #a80000;
+
+    color: white;
+
+    padding: 40px 20px;
+
+}
+
+.message h2 {
+
+    color: #ffdf75;
+
+}
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    background: #ffd45c;
+
+    color: #800000;
+
+    padding: 12px 22px;
+
+    margin: 10px 5px;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+button:hover {
+background: white;
+
+}
+
+#fireworks {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    background: #08051af5;
+
+    color: white;
+
+    text-align: center;
+
+}
+
+#fireworks h2 {
+color: #ffd45c;
+
+    font-size: 32px;
+
+    margin-top: 28vh;
+
+}
+
+#fireworks p {
+
+    font-size: 19px;
+
+}
+
+#fireworks canvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+#fireworks .firework-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+#fireworks button {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+footer {
+
+    background: #5c0000;
+
+    color: white;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    scroll-margin-top: 65px;
+
+}
+
+footer h2 {
+
+    color: #ffdf75;
+
+    margin-bottom: 15px;
+
+}
+
+footer p {
+
+    margin: 7px 0;
+
+}
+
+footer a {
+
+    color: #ffdf75;
+
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+
+        font-size: 28px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 27px;
+
+    }
+
+    nav a {
+
+        font-size: 13px;
+
+        margin: 4px 6px;
+
+    }
+
+    section {
+
+        padding: 35px 5%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TIÊU ĐỀ -->
+
+<header>
+
+    <h1>🧧 TẾT NGUYÊN ĐÁN 🧧</h1>
+
+    <p>An khang thịnh vương – Vạn sự như ý</p>
+
+</header>
+
+<!-- MENU -->
+
+<nav>
+
+    <a href="#gioithieu">Giới thiệu</a>
+
+    <a href="#phongtuc">Phong tục</a>
+
+    <a href="#banh">Bánh mứt Tết</a>
+
+    <a href="#chohoa">Chợ bông</a>
+
+    <a href="#hoixuan">Hội xuân</a>
+
+    <a href="#phaohoa">Pháo hoa</a>
+
+    <a href="#sumhop">Gia đình</a>
+
+    <a href="#chuctet">Chúc Tết</a>
+
+    <a href="#lienhe">Liên hệ</a>
+
+</nav>
+
+<!-- ẢNH BÌA -->
+
+<div class="hero">
+
+    <h2>Chào Xuân Mới!</h2>
+
+    <p>
+
+        Tết Nguyên Đán là dịp lễ truyền thống quan trọng nhất
+
+        của người Việt Nam, là thời gian để đoàn tụ gia đình,
+
+        gìn giữ phong tục và trao nhau những lời chúc tốt đẹp.
+
+    </p>
+
+    <a href="#gioithieu">Khám phá</a>
+
+</div>
+
+<!-- GIỚI THIỆU -->
+
+<section id="gioithieu">
+
+    <h2>🌸 1. Giới thiệu về Tết Nguyên Đán</h2>
+
+    <div class="intro">
+
+        <p>
+
+            Tết Nguyên Đán, hay còn gọi là Tết Âm lịch, đánh dấu sự
+
+            khởi đầu của một năm mới theo âm lịch. Đây là dịp
+
+            để mọi người trở về bên gia đình, tưởng nhớ tổ tiên,
+
+            nghỉ ngơi sau một năm làm việc và hy vọng vào những
+
+            điều tốt đẹp trong năm mới.
+
+        </p>
+
+        <p>
+
+            Tết mang ý nghĩa đoàn viên, yêu thương, biết ơn và
+
+            gìn giữ những giá trị văn hóa truyền thống của dân tộc.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PHONG TỤC -->
+
+<section id="phongtuc" class="highlight">
+
+    <h2>2. Những phong tục ngày Tết</h2>
+
+    <div class="cards">
+
+        <div class="card">
+<img src="https://i.pinimg.com/736x/b9/34/09/b93409f12e6acf174004859148bdfc1f.jpg" alt="Dọn dẹp, trang trí ngày Tết">
+
+            <div class="card-content">
+<h3>Dọn dẹp, trang trí nhà cửa</h3>
+
+                <p>Mọi người cùng dọn dẹp nhà cửa, trang trí hoa để đoán năm mới may mắn.</p
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://hoangthanhthanglong.vn/en/wp-content/uploads/sites/2/2024/02/phongtucngaytet03.jpg" alt="Thờ cúng ông bà tổ tiên ngày Tết">
+
+            <div class="card-content">
+
+                <h3>Cúng tổ tiên</h3>
+
+                <p>Gia đình chuẩn bị mâm cúng để tưởng nhớ ông bà,
+
+                tổ tiên và thể hiện lòng biết ơn.</p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://i.pinimg.com/736x/2f/dd/78/2fdd78941e9b522ca260af68d51701dc.jpg" alt="Chúc Tết">
+
+            <div class="card-content">
+
+                <h3>Chúc Tết đầu năm</h3>
+
+                <p>Mọi người thăm hỏi người thân, bạn bè và trao
+
+                nhau những lời chúc sức khỏe, bình an, thành công.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BÁNH -->
+
+<section id="banh">
+
+    <h2>3. Những ón bánh, mứt truyền thống ngày Tết</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img src="https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-banh-chung.jpg" alt="Bánh chưng">
+
+            <div class="card-content">
+
+                <h3>Bánh chưng</h3>
+
+                <p>Bánh chưng thường có hình vuông, được làm từ gạo
+
+                nếp, đậu xanh và thịt. Bánh tượng trưng cho sự
+
+                biết ơn và nét đẹp truyền thống Việt Nam.</p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://tiki.vn/blog/wp-content/uploads/2023/09/banh-tet-6.jpg" alt="Bánh tét">
+
+            <div class="card-content">
+
+                <h3>Bánh tét</h3>
+
+                <p>Bánh tét có hình trụ dài, phổ biến trong dịp Tết
+
+                ở miền Trung và miền Nam, thường được gói bằng lá chuối.</p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://file.hstatic.net/200000285021/article/nhung-thuc-qua-lam-nen-mam-co-tet-cua-nguoi-viet_3306d20d4f18414f82a77984d565cea5.jpg" alt="Mứt Tết">
+
+            <div class="card-content">
+
+                <h3>Mứt Tết</h3>
+
+                <p>Các loại mứt thường được để vào khay nhiều ngăn dùng để tiếp khách và thưởng thức.</p> 
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CHỢ HOA -->
+<section id="chohoa" class="highlight">
+
+    <h2>4. Đi chợ hoa ngày Tết</h2>
+
+    <div class="intro">
+
+        <p>
+Chợ hoa ngày Tết luôn rực rỡ với muôn vàn sắc màu.
+
+            Người dân đi chợ để chọn hoa mai, hoa đào, cúc,
+
+            quất cảnh và các loại cây trang trí nhà cửa.
+
+        </p>
+
+        <p>
+
+            Hoa mai vàng gắn liền với Tết miền Nam, còn hoa đào
+
+            thường tượng trưng cho mùa xuân miền Bắc. Đi chợ hoa
+
+            cũng là dịp để mọi người tận hưởng không khí xuân.
+
+        </p>
+
+    </div>
+
+    <div class="cards" style="margin-top:25px">
+
+        <div class="card">
+
+            <img src="https://inkythuatso.com/uploads/images/2022/03/hinh-anh-hoa-mai-vang-32-21-13-42-05.jpg" alt="Hoa mùa xuân">
+
+            <div class="card-content">
+
+                <h3>Sắc hoa mùa xuân</h3>
+
+                <p>Những cành hoa tươi thắm mang đến không khí
+
+                vui tươi và hy vọng cho năm mới.</p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2023/01/hinh-anh-tet-46.jpg" alt="Chọn hoa trang trí">
+
+            <div class="card-content">
+
+                <h3>Chọn hoa đón Tết</h3>
+
+                <p>Mỗi gia đình lựa chọn loại hoa yêu thích để
+
+                trang trí không gian sống trong dịp Tết.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HỘI XUÂN -->
+
+<section id="hoixuan">
+
+    <h2>5. Hội xuân và trò chơi dân gian</h2>
+
+    <div class="intro">
+
+        <p>
+
+            Trong những ngày đầu năm, nhiều địa phương tổ chức
+
+            hội xuân, biểu diễn văn nghệ, múa lân, trò chơi dân gian,
+
+            hội chợ và các hoạt động văn hóa truyền thống.
+
+        </p>
+        <p>
+            Đây là dịp để mọi người vui chơi, giao lưu, tìm hiểu
+           văn hóa dân tộc và cùng nhau đón một mùa xuân vui vẻ.
+        </p>
+    </div>
+    <div class="cards" style="margin-top:25px">
+
+        <div class="card">
+
+            <img src="https://tse3.mm.bing.net/th/id/OIP.CZPHRAC8ho9U6rTAJM6G7AHaE7?r=0&pid=Api&h=220&P=0" alt="Hội xuân ngày Tết">
+
+            <div class="card-content">
+
+                <h3>Hội xuân ngày Tết</h3>
+
+                <p>Đông vui, rực rỡ sắc màu với nhiều quầy trò chơi và chương trình ca nhạc.</p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://media.tapchinghiencuuphathoc.vn/uploads/2026/01/06/tap-chi-ncph-vui-xuan-trong-anh-sang-chinh-phap-1-1767667393.jpg" alt="Vui chơi cùng gia đình, bạn bè">
+
+            <div class="card-content">
+
+                <h3>Vui xuân cùng gia đình và bạn bè</h3>
+
+                <p>Cùng tham gia hoạt động vui chơi,
+chụp ảnh lưu niệm và tận hưởng ngày Tết.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PHÁO HOA -->
+<section id="phaohoa" class="highlight">
+
+    <h2>6. Xem pháo hoa đón năm mới</h2>
+
+    <div class="intro">
+
+        <p>
+
+            Khoảnh khắc giao thừa là thời điểm chuyển giao giữa
+
+            năm cũ và năm mới. Nhiều người cùng gia đình, bạn bè
+
+            ngắm pháo hoa, gửi lời chúc và hy vọng về một năm
+
+            mới bình an, hạnh phúc.
+
+        </p>
+
+        <p>Nhấn nút bên dưới để mở màn pháo hoa mô phỏng nhé!</p>
+
+        <button onclick="startFireworks()">🎆 Xem pháo hoa</button>
+
+    </div>
+
+</section>
+<!-- SUM HỌP GIA ĐÌNH -->
+
+<section id="sumhop">
+
+    <h2>7. Sum họp gia đình ngày Tết</h2>
+
+    <div class="intro">
+
+        <p>
+
+            Tết là dịp để các thành viên trong gia đình trở về
+
+            bên nhau sau những ngày học tập và làm việc.
+
+            Mọi người cùng chuẩn bị bữa cơm, trò chuyện, kể cho
+
+            nhau nghe những câu chuyện trong năm qua.
+
+        </p>
+
+        <p>
+
+            Bữa cơm tất niên và những phút giây đoàn viên chính
+
+            là điều quý giá, làm nên ý nghĩa sâu sắc của Tết Việt.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CHÚC TẾT VÀ LÌ XÌ -->
+
+<section id="chuctet" class="highlight">
+
+    <h2>8. Chúc Tết và nhận lì xì</h2>
+
+    <div class="intro">
+
+        <p>
+
+            Vào đầu năm mới, con cháu chúc Tết ông bà, cha mẹ;
+
+            mọi người trao nhau những lời chúc tốt đẹp.
+
+            Phong bao lì xì đỏ tượng trưng cho lời chúc may mắn,
+
+            sức khỏe và bình an.
+
+        </p>
+<p>Hãy nhấn nút để nhận một lời chúc đầu năm nhé!</p>
+
+        <button onclick="luckyMoney()">🧧 Nhận lì xì</button>
+
+        <h3 id="lixiResult" style="margin-top:20px;color:#b00000"></h3>
+
+    </div>
+
+</section>
+
+<!-- LỜI CHÚC -->
+
+<div class="message">
+
+    <h2>🌸 Chúc Mừng Năm Mới 🌸</h2>
+
+    <p>Chúc mọi người năm mới an khang, thịnh vượng!</p>
+
+    <p>Vạn sự như ý – Tỷ sự như mơ – Triệu điều bất ngờ!</p>
+
+</div>
+
+<!-- THÔNG TIN LIÊN HỆ: LUÔN Ở CUỐI TRANG -->
+
+<footer id="lienhe">
+
+    <h2>📞 Thông tin liên hệ</h2>
+
+    <p>🌸 Cảm ơn bạn đã ghé thăm website Tết Nguyên Đán! 🌸</p>
+
+    <p><strong>Họ và tên:</strong> Nguyễn Thị Cẩm Duyên</p>
+
+    <p><strong>Email:</strong>
+
+        <a href="mailto:cduyen902231@gmail.com">
+
+            cduyen902231@gmail.com
+
+        </a>
+
+    </p>
+
+    <p><strong>Số điện thoại:</strong> 0966152301</p>
+
+    <p style="margin-top:20px">
+
+        © 2026 - Website Tết Nguyên Đán Việt Nam
+
+    </p>
+
+</footer>
+
+<!-- MÀN HÌNH PHÁO HOA -->
+
+<div id="fireworks">
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <div class="firework-content">
+
+        <h2>🎆 CHÚC MỪNG NĂM MỚI 🎆</h2>
+<p>Chúc bạn và gia đình một năm mới bình an, hạnh phúc!</p>
+
+    </div>
+
+    <button onclick="stopFireworks()">Đóng pháo hoa ✖</button>
+
+</div>
+
+<script>
+
+// LỜI CHÚC VÀ LÌ XÌ
+
+function luckyMoney() {
+
+    const wishes = [
+
+        "🧧 Chúc bạn năm mới học giỏi, gặp nhiều may mắn!",
+
+        "🌸 Chúc gia đình bạn luôn mạnh khỏe, hạnh phúc!",
+
+        "💰 Chúc bạn một năm mới tài lộc và thành công!",
+
+        "🎊 Chúc bạn vạn sự như ý, mọi điều tốt lành!",
+
+        "❤️ Chúc bạn luôn vui vẻ và tràn đầy năng lượng!",
+
+        "✨ Chúc năm mới bình an, ước mơ thành hiện thực!"
+
+    ];
+
+    const random = Math.floor(Math.random() * wishes.length);
+
+    document.getElementById("lixiResult").textContent = wishes[random];
+
+}
+
+// HIỆU ỨNG PHÁO HOA
+
+const canvas = document.getElementById("fireworksCanvas");
+
+const ctx = canvas.getContext("2d");
+
+const fireworksBox = document.getElementById("fireworks");
+
+let particles = [];
+
+let animationId = null;
+
+let fireworksActive = false;
+
+function resizeCanvas() {
+
+    canvas.width = window.innerWidth;
+
+    canvas.height = window.innerHeight;
+
+}
+
+window.addEventListener("resize", resizeCanvas);
+
+resizeCanvas();
+
+function createFirework(x, y) {
+
+    const colors = [
+
+        "#ff3030", "#ffd700", "#00ffff",
+
+        "#ff69b4", "#ffffff", "#7fff00"
+
+    ];
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    for (let i = 0; i < 65; i++) {
+
+        const angle = Math.random() * Math.PI * 2;
+
+        const speed = Math.random() * 4 + 1;
+
+        particles.push({
+
+            x: x,
+y: y,
+
+            vx: Math.cos(angle) * speed,
+
+            vy: Math.sin(angle) * speed,
+
+            life: 80,
+
+            color: color,
+
+            size: Math.random() * 3 + 1
+
+        });
+
+    }
+
+}
+
+function animateFireworks() {
+
+    if (!fireworksActive) return;
+
+    ctx.fillStyle = "rgba(8, 5, 26, 0.2)";
+
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (Math.random() < 0.07) {
+
+        createFirework(
+
+            Math.random() * canvas.width,
+
+            Math.random() * canvas.height * 0.65
+
+        );
+
+    }
+
+    particles = particles.filter(p => p.life > 0);
+
+    particles.forEach(p => {
+
+        p.x += p.vx;
+
+        p.y += p.vy;
+
+        p.vy += 0.025;
+
+        p.vx *= 0.99;
+
+        p.vy *= 0.99;
+
+        p.life--;
+
+        ctx.globalAlpha = Math.max(0, p.life / 80);
+
+        ctx.fillStyle = p.color;
+
+        ctx.beginPath();
+
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+        ctx.fill();
+
+    });
+
+    ctx.globalAlpha = 1;
+
+    animationId = requestAnimationFrame(animateFireworks);
+
+}
+
+function startFireworks() {
+
+    fireworksBox.style.display = "block";
+
+    fireworksActive = true;
+
+    particles = [];
+
+    resizeCanvas();
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < 5; i++) {
+
+        createFirework(
+Math.random() * canvas.width,
+
+            Math.random() * canvas.height * 0.6
+
+        );
+
+    }
+
+    animateFireworks();
+
+}
+
+function stopFireworks() {
+
+    fireworksActive = false;
+
+    cancelAnimationFrame(animationId);
+
+    fireworksBox.style.display = "none";
+
+    particles = [];
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+}
+
+</script>
+
+</body>
+
+</html>
